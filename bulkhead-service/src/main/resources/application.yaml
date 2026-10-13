@@ -4,3 +4,8 @@ resilience4j.thread-pool-bulkhead:
       queue-capacity: 1
       core-thread-pool-size: 1
       max-thread-pool-size: 1
+resilience4j.bulkhead:
+  instances:
+    orderSemaphoreService:
+      max-concurrent-calls: 5
+      max-wait-duration: 3000
