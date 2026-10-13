@@ -1,0 +1,6 @@
+resilience4j.thread-pool-bulkhead:
+  instances:
+    orderService:
+      queue-capacity: 1
+      core-thread-pool-size: 1
+      max-thread-pool-size: 1

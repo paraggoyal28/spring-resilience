@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: retry-service
+resilience4j:
+  retry:
+    instances:
+      orderService:
+        max-attempts: 3
+        wait-duration: 10000
