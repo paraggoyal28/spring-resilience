@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: timelimiter-service
+resilience4j.timelimiter:
+  instances:
+    orderService:
+      timeout-duration: 2s
+      cancel-running-future: true #whether cancel should be called on the running future
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: ratelimiter-service
+resilience4j:
+  ratelimiter:
+    instances:
+      orderService:
+        limit-for-period: 2
+        limit-refresh-period: 4s
+        timeout-duration: 10s
+        register-health-indicator: true
+        event-consumer-buffer-size: 100
+
+
+management:
+  health:
+    ratelimiters:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics
+  endpoint:
+    health:
+      show-details: always
